@@ -15,14 +15,23 @@
         <form method="GET" action="results.html">
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35">
+                
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class="required-field">*</span>
+                <!-- <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35"> -->
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35">
             </div>
+            <label for="age">Your Age</label>
+            <span class="required-field">*</span>
+            <input type="number" id="age" name="age" min="21" max="120">
+            <h5>21+ To Enter Contest</h5>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
                     <label for="email">Your Email</label>
+                    <span class="required-field">*</span>
                     <input type="email" id="email" name="email">
                 </div>
                 <div>
@@ -86,7 +95,7 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-Digit US ZIP Code">
                 </div>
             </fieldset>
 
@@ -131,7 +140,11 @@
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
             </fieldset>
+            <label for="cd">Your Secret Code</label>
+            <span class="required-field">*</span>
+            <input type="password" id="cd" name="cd" minlength="6" title="6 Alphanumeric Character Passcode" pattern=[A-Za-z0-9]{6}>
             
+
             <input type="submit" value="Enter the Contest!">
         </form>
     </main>
